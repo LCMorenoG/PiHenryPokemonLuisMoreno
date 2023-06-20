@@ -1,0 +1,30 @@
+.navbar-container {
+    background-color: #000000;
+    padding: 10px;
+  }
+  
+  .navbar-container nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-container button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;    
+    background-color: #FFCB05;
+    border-radius: 5px;
+  }
+  
+  .navbar-container a {
+    text-decoration: none;
+    color: #333333;
+    padding: 5px;    
+    font-size: large;
+    border-radius: 5px;
+  }
+  
+  .navbar-container a:hover {
+    background-color: #dddddd;
+  }

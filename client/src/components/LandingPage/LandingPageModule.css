@@ -1,0 +1,26 @@
+.landing-page {
+    background-image: url("../assets/landingPageBg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+    
+.start-button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #FF3B2F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 100px white;
+}

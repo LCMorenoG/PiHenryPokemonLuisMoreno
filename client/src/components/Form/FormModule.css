@@ -1,0 +1,82 @@
+.create-pokemon-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-image: url('../assets/pokemonCreatorBg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.create-pokemon-form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    /* Ajusta el ancho según tus necesidades */
+    margin-top: 10px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.658);
+}
+
+.create-pokemon-form-container label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 100%;
+}
+
+.create-pokemon-form-container input[type="text"],
+.create-pokemon-form-container input[type="number"] {
+    width: 80%;
+    padding: 5px;    
+    margin-top: 5px;
+    border: 1px solid #ccc;
+}
+
+.create-pokemon-form-container input[type="checkbox"] {
+    margin-left: 5px;
+    color: #A0A0A0;
+}
+
+.create-pokemon-form-container button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-pokemon-form-container button:hover {
+    background-color: #A0A0A0;
+  }
+
+.create-pokemon-form-container span {
+    color: #ffe168;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.create-pokemon-form-container h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.types-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Cambia el número "3" a la cantidad de columnas que desees */
+    grid-gap: 10px;
+    width: 100%;
+}

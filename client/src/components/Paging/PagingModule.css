@@ -1,0 +1,28 @@
+.paging-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .paging-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .paging-button {
+    background-color: #A0A0A0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .paging-button.active {
+    background-color: #4caf50;
+  }
+  
+  .paging-button:focus {
+    outline: none;
+  }
