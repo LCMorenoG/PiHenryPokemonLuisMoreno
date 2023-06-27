@@ -4,14 +4,14 @@ import style from "./PagingModule.css"
 const Paging = ({ pokemonPerPage, activeList, currentPage, paging }) => {
     const pageNumbers = []
 
+    
     for (let i = 1; i <= Math.ceil(activeList / pokemonPerPage); i++) {
         pageNumbers.push(i)
     }
 
-
-/*     if(pageNumbers.length<=1){
-        currentPage = 1
-      } */
+    if(currentPage > pageNumbers.length){
+      paging(1)
+    }
 
     const goToPreviousPage = () => {
         if (currentPage > 1) {
@@ -24,9 +24,6 @@ const Paging = ({ pokemonPerPage, activeList, currentPage, paging }) => {
           paging(currentPage + 1);
         }
       };
-
-
-
 
     return (
         <nav className="paging-container">

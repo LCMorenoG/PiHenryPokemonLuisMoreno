@@ -1,9 +1,13 @@
 import { useDispatch } from "react-redux"
 import { filterCardsOrigin, filterCardsType, orderCardsAlphab, orderCardsAtack } from "../Redux/action"
-import { connect } from "react-redux"
+import { connect, useSelector } from "react-redux"
+import { useState, useEffect } from "react";
+import axios from "axios";
 import style from "./FilterAndOrderModule.css"
 
 const FilterAndOrderBar = () => {
+
+    let typeArray = useSelector(state => state.pokemonTypes);
 
     const dispatch = useDispatch()
 
@@ -21,7 +25,7 @@ const FilterAndOrderBar = () => {
 
     const handleTypeFilter = (event) => {
         dispatch(filterCardsType(event.target.value))
-    }
+    } 
 
     return (
 
@@ -61,29 +65,9 @@ const FilterAndOrderBar = () => {
             <div>
                 <h2>Filter by Type</h2>
                 <select multiple onChange={handleTypeFilter}>
-
                     <option value="all">All</option>
-                    <option value="normal">Normal</option>
-                    <option value="fighting">Fighting</option>
-                    <option value="flying">Flying</option>
-                    <option value="poison">Poison</option>
-                    <option value="ground">Ground</option>
-                    <option value="rock">Rock</option>
-                    <option value="bug">Bug</option>
-                    <option value="ghost">Ghost</option>
-                    <option value="steel">Steel</option>
-                    <option value="fire">Fire</option>
-                    <option value="water">Water</option>
-                    <option value="grass">Grass</option>
-                    <option value="electric">Electric</option>
-                    <option value="psychic">Psychic</option>
-                    <option value="ice">Ice</option>
-                    <option value="dragon">Dragon</option>
-                    <option value="dark">Dark</option>
-                    <option value="fairy">Fairy</option>
-                    <option value="unknown">Unknown</option>
-                    <option value="shadow">Shadow</option>
-
+                    {typeArray.map((type) => (
+                    <option key={type} value={type}>{type}</option>))}
                 </select>
             </div>
 

@@ -9,7 +9,6 @@ return(
     <NavLink to={"/home"}>
         <button className="start-button">START</button>
     </NavLink>
-
 </div>
 )
 };

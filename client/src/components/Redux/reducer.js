@@ -1,26 +1,44 @@
 const initialState = {
     allPokemons: [],
     pokemonsFiltered: [],
-    currentPage: 1,
-    totalPages: 1,
-    pageSize: 12
+    pokemonTypes: []
 }
 
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
 
+        case 'SET_TYPES':
+            return {
+                ...state,
+                pokemonTypes: action.payload,
+            }
+
         case 'SET_POKEMONS':
             return {
                 ...state,
-                allPokemons: action.payload
+                allPokemons: action.payload,
+
+            };
+
+        case 'DELETE_POKEMON':
+            let pokemonsFilterDelete = state.pokemonsFiltered.filter(
+                (poke) => poke.name !== action.payload            
+            );
+            let allPokemonsDelete = state.allPokemons.filter(
+                (poke) => poke.name !== action.payload
+            );
+
+            return {
+                ...state,
+                allPokemons: allPokemonsDelete,
+                pokemonsFiltered: pokemonsFilterDelete
             };
 
         case 'FILTER_ORIGIN':
             let pokemonsFilterOrigin = [...state.pokemonsFiltered];
 
-            if (pokemonsFilterOrigin.length === 0){
-                console.log("llega aqui1");
+            if (pokemonsFilterOrigin.length === 0) {
                 pokemonsFilterOrigin = [...state.allPokemons]
             }
 
@@ -29,16 +47,16 @@ const reducer = (state = initialState, action) => {
             }
             if (action.payload === "API") {
                 pokemonsFilterOrigin = pokemonsFilterOrigin.filter((poke) => !poke.id.toString().includes("-"));
-                console.log(pokemonsFilterOrigin);
+
             }
             if (action.payload === "all") {
                 pokemonsFilterOrigin = initialState.allPokemons;
             } else {
                 if (pokemonsFilterOrigin.length === 0) {
                     window.alert("No hay coincidencias");
-
                 }
-            }            
+            }
+
             return {
                 ...state,
                 pokemonsFiltered: pokemonsFilterOrigin
@@ -58,7 +76,7 @@ const reducer = (state = initialState, action) => {
             if (action.payload === "all") {
                 pokemonFilterType = initialState.allPokemons;
             } else {
-                if (pokemonFilterType.length === 0) {                    
+                if (pokemonFilterType.length === 0) {
                     window.alert("No hay coincidencias");
                 }
             }

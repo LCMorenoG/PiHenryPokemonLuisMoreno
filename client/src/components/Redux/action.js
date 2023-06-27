@@ -18,3 +18,11 @@ export const orderCardsAtack = (order)=>{
 export const setCards = (pokemons)=>{
     return {type: "SET_POKEMONS", payload: pokemons}
 }
+
+export const deletePokemon = (name)=>{
+    return {type: "DELETE_POKEMON", payload: name}
+}
+
+export const setTypes = (types) =>{
+    return {type: "SET_TYPES", payload: types}
+}

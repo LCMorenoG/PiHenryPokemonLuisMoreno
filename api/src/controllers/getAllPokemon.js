@@ -14,8 +14,6 @@ const getAllPokemon = async (req, res) => {
         let urlNext = URL;
         let pageCount = 0
         while (pageCount !== 60) {
-
-            console.log(pageCount);
             let response = await axios.get(urlNext)
             let { data } = response
             arrayAllPokemon = arrayAllPokemon.concat(data.results);
@@ -24,8 +22,9 @@ const getAllPokemon = async (req, res) => {
         }
         const findAllPokemon = await pokemon.findAll({ attributes: ['name'], raw: true });
 
-        findAllPokemon.length ? arrayAllPokemon = arrayAllPokemon.concat(findAllPokemon) : arrayAllPokemon;
-
+        if (findAllPokemon.length) {           
+            arrayAllPokemon = arrayAllPokemon.concat(findAllPokemon);         
+          }
 
         let detailAllPokemonPromises = arrayAllPokemon.map((pokemon) => pokemonByName(pokemon.name));
         let detailAllPokemon = await Promise.all(detailAllPokemonPromises);

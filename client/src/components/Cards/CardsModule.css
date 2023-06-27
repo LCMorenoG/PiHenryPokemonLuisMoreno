@@ -1,15 +1,17 @@
 .cards-container {
+  display: flex;
+  align-items: center;
   padding: 20px;
-  background-color: #000000;
+  background-color: transparent;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
   width: 100%;
+  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .cards-scroll {
     display: flex;
-    flex-wrap: nowrap;
     padding: 10px;
   }
   

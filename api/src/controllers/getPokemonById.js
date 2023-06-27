@@ -13,8 +13,12 @@ const getPokemonById = async (req, res) => {
             let types = typesDB.map(type=>type.name);            
             findPokemonById.dataValues.types = types
             res.status(200).json(findPokemonById);
-            console.log(findPokemonById);
         }
+
+
+        // ahora consultamos a la API
+
+
         else {
             let response = await axios.get(`${URL}${id}`);
             let types = response.data.types.map(type => type.type.name)

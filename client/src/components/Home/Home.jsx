@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Paging from "../Paging/Paging";
 import Cards from "../Cards/Cards";
 import SearchBar from "../SearchBar/SearchBar";
@@ -15,8 +15,7 @@ const Home = () => {
 
     let activeList = useSelector(state => state.allPokemons);
     let pokemonsFiltered = useSelector(state => state.pokemonsFiltered);
-    console.log(pokemonsFiltered);
-    (pokemonsFiltered.length > 0 ) && (activeList = pokemonsFiltered);
+    (pokemonsFiltered.length > 0) && (activeList = pokemonsFiltered);
 
     const [currentPage, setCurrentPage] = useState(1);
     const [pokemonPerPage, setPokemonPerPage] = useState(12);
@@ -27,25 +26,23 @@ const Home = () => {
 
     const onSearch = async (name) => {
         try {
-           const response = await axios(`http://localhost:3003/pokemons?name=${name}`)
-           const pokemons = response.data;
-  
-           if (pokemons.name) {
-              dispatch({ type: 'SET_POKEMONS', payload: [pokemons] });
+            const response = await axios(`http://localhost:3003/pokemons?name=${name}`)
+            const pokemons = response.data;
+
+            if (pokemons.name) {
+                dispatch({ type: 'SET_POKEMONS', payload: [pokemons] });
                 setCurrentPage(1);
             } else {
-              throw Error();
-           }
+                throw Error();
+            }
         } catch (error) {
-           window.alert('No hay Pokemons con ese nombre')
+            window.alert('No hay Pokemons con ese nombre')
         }
-     }
+    }
 
     const paging = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
-
-    console.log(paging);
 
     return (
         <div className="home-container">
@@ -60,8 +57,8 @@ const Home = () => {
                 paging={paging}
                 currentPage={currentPage}
             />
-
-            <Cards
+            
+            <Cards 
                 currentPokemons={currentPokemons}
             />
 

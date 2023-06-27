@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;    
-    background-color: rgba(57, 59, 59, 0.774);
-    
+    text-align: center; 
+    background-image: url("../assets/DetailBg.jpg");
+    height: max-content;
   }  
 
   .card-detail {
@@ -14,10 +14,9 @@
     justify-content: center;
     padding: 10px;
     background-color: #FFCB05;
-    border: 1px solid #cccccc;
+    border: 1px solid #000000;
     border-radius: 5px;
-    text-align: center;    
-    transition: transform 0.3s ease;
+    text-align: center; 
     flex: 0 0 auto;
     margin-right: 10px;
     margin-top: 10px;
@@ -27,11 +26,12 @@
     width:  500px;
     height: 450px;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
   }
   
   .detail-container h1,h2 {
-    margin: 5px 0;
+    margin: 0px 0;
+    padding: 0;
   }
 
   .info-container {
@@ -40,10 +40,11 @@
     padding: 3px;
     margin-bottom: 3px;
     width: 80%;
+    border: 1px solid #000000;
 }
 
 .img-container {
-    background-color: #A0A0A0;
+    background-color: transparent;
     border-radius: 3px;
     margin-bottom: 10px;
 }

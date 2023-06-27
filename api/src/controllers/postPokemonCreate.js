@@ -22,6 +22,7 @@ try {
     let findTypes = await type.findAll({where:{name: types}});
     
     await newPokemon[0].setTypes(findTypes)
+    
     if (newPokemon[1]===false){return res.status(400).send("Ya existe este Pokemon")}    
     res.status(201).json(newPokemon[0])
     console.log(types);

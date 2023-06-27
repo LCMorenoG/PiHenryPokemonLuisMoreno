@@ -1,6 +1,6 @@
 .filter-order-container {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
     background-color: #FFCB05;
     padding: 10px;
@@ -8,11 +8,20 @@
   
   .filter-order-container h2 {
     margin: 0;
+    font-size: 15px;
   }
   
   .filter-order-container select {
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: #68c05756;
+  }
+
+  .filter-order-container select:hover {
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #156935a4;
+    box-shadow: white;
   }
   
   .filter-order-container select[multiple] {
